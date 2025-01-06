@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20230324/MODEL/" expressionLanguage="https://www.omg.org/spec/DMN/20230324/FEEL/" namespace="https://kie.org/dmn/_DA00A263-B44A-49DC-8686-AF23E5EE412A" id="_6ADA4B31-C9DA-4A47-B2F8-F22D3B893424" name="DMN_77FDE7D6-A66D-46FA-AE22-4D28055590C1" xmlns:dmndi="https://www.omg.org/spec/DMN/20230324/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:kie="https://kie.org/dmn/extensions/1.0">
+  <inputData name="Name" id="_026EFB7B-71B9-462E-B290-8A59FE88CDAE">
+    <variable name="Name" id="_6A8D0811-A407-47D2-8C5E-73EE1A1E72DB" typeRef="string" />
+  </inputData>
+  <decision name="Daily-Advice" id="_B0605237-0BA9-456A-8DEC-D10DF0982D8C">
+    <variable id="_B8F3836A-D96C-4070-8083-59438F6AEFA5" typeRef="string" name="Daily-Advice" />
+    <informationRequirement id="_D7730943-FE0F-42D1-B43F-6A036676706B">
+      <requiredInput href="#_026EFB7B-71B9-462E-B290-8A59FE88CDAE" />
+    </informationRequirement>
+    <informationRequirement id="_C03EFB04-2FBC-4933-854A-92283A05FF89">
+      <requiredDecision href="#_C5445874-BC59-4C26-A0A8-49FA7AD1129A" />
+    </informationRequirement>
+    <literalExpression id="_F9A20785-5137-4425-B452-CC4DD9575E8F" label="Daily-Advice">
+      <text>if Name = &quot;&quot; then &quot;Sorry, we don&apos;t have enough information to provide a response.&quot; else &quot;Hello &quot;+Name+&quot;! &quot;</text>
+    </literalExpression>
+  </decision>
+  <inputData name="Rain-Forecast" id="_3940ED13-8CE4-45EC-A3BC-4A67CC158D63">
+    <variable name="Rain-Forecast" id="_0AFC970D-EB5E-43E6-BAAA-B89EB47C35A5" typeRef="number" />
+  </inputData>
+  <decision name="Weather-Advice" id="_C5445874-BC59-4C26-A0A8-49FA7AD1129A">
+    <variable id="_455D5E92-3A2D-42B9-8D9D-25C84E5E4620" name="Weather-Advice" />
+    <informationRequirement id="_CA71C48C-CFC0-4117-8FA1-31B09FE438B3">
+      <requiredInput href="#_3940ED13-8CE4-45EC-A3BC-4A67CC158D63" />
+    </informationRequirement>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_C3460666-586A-45DD-B271-3EB042B926F3" name="Default DRD" useAlternativeInputDataShape="false">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_F9A20785-5137-4425-B452-CC4DD9575E8F">
+            <kie:width>1092</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="_7331FE02-06C5-4EDD-8C12-8DDCA989557A" dmnElementRef="_026EFB7B-71B9-462E-B290-8A59FE88CDAE" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="580" y="260" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_1E180E3C-B1FF-414C-8C51-BA2BBAA9CFB8" dmnElementRef="_B0605237-0BA9-456A-8DEC-D10DF0982D8C" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="460" y="-60" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_5474DB12-3A80-4CB4-9C2F-22D773AA5D41-AUTO-TARGET" dmnElementRef="_D7730943-FE0F-42D1-B43F-6A036676706B" sourceElement="_7331FE02-06C5-4EDD-8C12-8DDCA989557A" targetElement="_1E180E3C-B1FF-414C-8C51-BA2BBAA9CFB8">
+        <di:waypoint x="660" y="300" />
+        <di:waypoint x="540" y="-20" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="_4B88AEE7-8B80-4BC3-AE55-C77371048985" dmnElementRef="_3940ED13-8CE4-45EC-A3BC-4A67CC158D63" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="280" y="260" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="_65D728C2-B989-48F8-A71E-59F7F1F1B236" dmnElementRef="_C5445874-BC59-4C26-A0A8-49FA7AD1129A" isCollapsed="false" isListedInputData="false">
+        <dc:Bounds x="280" y="120" width="160" height="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="_DBD75A8A-A2B3-430E-9738-A63A8A4C8DD8-AUTO-TARGET" dmnElementRef="_CA71C48C-CFC0-4117-8FA1-31B09FE438B3" sourceElement="_4B88AEE7-8B80-4BC3-AE55-C77371048985" targetElement="_65D728C2-B989-48F8-A71E-59F7F1F1B236">
+        <di:waypoint x="360" y="300" />
+        <di:waypoint x="360" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="_97489E12-C8FB-47AD-8C62-3A70DBA25270" dmnElementRef="_C03EFB04-2FBC-4933-854A-92283A05FF89" sourceElement="_65D728C2-B989-48F8-A71E-59F7F1F1B236" targetElement="_1E180E3C-B1FF-414C-8C51-BA2BBAA9CFB8">
+        <di:waypoint x="360" y="160" />
+        <di:waypoint x="540" y="-20" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
