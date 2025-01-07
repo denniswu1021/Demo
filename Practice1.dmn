@@ -41,7 +41,7 @@
     <informationRequirement id="_CA71C48C-CFC0-4117-8FA1-31B09FE438B3">
       <requiredInput href="#_3940ED13-8CE4-45EC-A3BC-4A67CC158D63" />
     </informationRequirement>
-    <decisionTable id="_6F62CB9B-D52A-4911-B6AD-B84138957FAC" typeRef="string" hitPolicy="UNIQUE" label="Weather-Advice">
+    <decisionTable id="_6F62CB9B-D52A-4911-B6AD-B84138957FAC" typeRef="string" hitPolicy="FIRST" label="Weather-Advice">
       <input id="_14046B95-EBD6-4305-A494-03771DDBF09C">
         <inputExpression id="_38C939F7-A1CB-474C-96ED-2BA74B061E26" typeRef="number">
           <text>Weather.rainForecast</text>
@@ -59,6 +59,23 @@
       </input>
       <output id="_9C9EAD7E-C413-4B88-89A2-A699A37301C4" name="Output-1" />
       <annotation name="Annotations" />
+      <rule id="_315F9C51-DE4E-4150-9DB5-E835503BF611">
+        <inputEntry id="_E3CC4BD6-7142-45C7-81C3-8B292542FDAB">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="_23F0C0BA-E77B-464B-9E9E-21B749C63281">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="_E3866D56-9E12-44BD-9CAB-DF977BB058A9">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="_47D83D57-1607-41DE-AF74-79CC2A71E346">
+          <text>&quot;Stay home. There is a storm alert.&quot;</text>
+        </outputEntry>
+        <annotationEntry>
+          <text></text>
+        </annotationEntry>
+      </rule>
       <rule id="_7281729F-315B-4AE6-9BCF-45356F6815DC">
         <inputEntry id="_068E9E89-4283-4B16-96BC-466ED881162B">
           <text>[0..20)</text>
